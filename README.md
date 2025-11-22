@@ -1,4 +1,4 @@
-**Paracetamol Sentiment Analysis
+**Paracetamol Sentiment Analysis**
 
 A machine learning project that analyzes YouTube comments about paracetamol and predicts sentiment trends for the next year.
 
