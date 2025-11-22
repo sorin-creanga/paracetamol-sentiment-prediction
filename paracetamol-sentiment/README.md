@@ -97,7 +97,7 @@ Technologies
 
  Author
 
-Your Name - [GitHub Profile](https://github.com/YOUR_USERNAME)
+ [GitHub Profile](https://github.com/sorin-creanga)
 
 License
 
