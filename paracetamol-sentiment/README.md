@@ -1,15 +1,15 @@
-# 💊 Paracetamol Sentiment Analysis
+Paracetamol Sentiment Analysis
 
 A machine learning project that analyzes YouTube comments about paracetamol and predicts sentiment trends for the next year.
 
-## Features
+ Features
 
-- 🎬 Scrapes 1000+ YouTube videos for paracetamol comments
-- 📊 Analyzes sentiment (positive/negative/neutral) using VADER
-- 🔮 Predicts sentiment for next 365 days using ARIMA
-- 📈 Interactive Streamlit dashboard with visualizations
+-  Scrapes 1000+ YouTube videos for paracetamol comments
+-  Analyzes sentiment (positive/negative/neutral) using VADER
+-  Predicts sentiment for next 365 days using ARIMA
+-  Interactive Streamlit dashboard with visualizations
 
-## Project Structure
+ Project Structure
 ```
 paracetamol-sentiment/
 ├── dashboard.py              # Main Streamlit app
@@ -21,7 +21,7 @@ paracetamol-sentiment/
 └── README.md               # This file
 ```
 
-## Installation
+ Installation
 
 1. Clone the repository:
 ```bash
@@ -45,7 +45,7 @@ pip install -r requirements.txt
 YOUTUBE_API_KEY=your_api_key_here
 ```
 
-## Usage
+ Usage
 
 Run the Streamlit dashboard:
 ```bash
@@ -54,14 +54,14 @@ streamlit run dashboard.py
 
 Then visit: `http://localhost:8501`
 
-## Data Processing Pipeline
+ Data Processing Pipeline
 
-1. **Scrape**: `youtube_scraper_fixed.py` - Fetch comments from YouTube
+1. **Scrape**: `scrapper.py` - Fetch comments from YouTube
 2. **Analyze**: `sentiment_analyzer.py` - Score sentiment (VADER)
 3. **Predict**: `predict_sentiment.py` - Forecast next year (ARIMA)
 4. **Visualize**: `dashboard.py` - Interactive Streamlit dashboard
 
-## Results
+ Results
 
 - **Total Comments Analyzed**: 1,274
 - **Sentiment Distribution**:
@@ -70,22 +70,22 @@ Then visit: `http://localhost:8501`
   - Neutral: 906 (71%)
 - **Average Sentiment Score**: 0.XX
 
-## Dashboard Pages
+ Dashboard Pages
 
-### 📈 Overview
+ Overview
 - Key metrics (total, positive, negative)
 - Sentiment distribution pie chart
 
-### 🔍 Analysis
+ Analysis
 - Sentiment score histogram
 - Sample comments by category
 
-### 🔮 Predictions
+🔮 Predictions
 - 365-day sentiment forecast
 - Confidence intervals
 - Forecast statistics
 
-## Technologies
+Technologies
 
 - **Python 3.10+**
 - **Streamlit** - Interactive dashboard
@@ -95,7 +95,7 @@ Then visit: `http://localhost:8501`
 - **Pandas** - Data processing
 - **Google API** - YouTube data
 
-## Author
+ Author
 
 Your Name - [GitHub Profile](https://github.com/YOUR_USERNAME)
 
@@ -103,7 +103,8 @@ Your Name - [GitHub Profile](https://github.com/YOUR_USERNAME)
 
 MIT License - feel free to use this project
 
-## Future Improvements
+
+ Future Improvements
 
 - [ ] Add more data sources (Reddit, Twitter)
 - [ ] Implement transformer models (DistilBERT)
