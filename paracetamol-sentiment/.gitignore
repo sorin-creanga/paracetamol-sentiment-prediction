@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+
+# Data files (keep local, don't upload)
+data/raw/*.csv
+data/processed/*.csv
+data/predictions/*.csv
+*.csv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Environment
+.env
