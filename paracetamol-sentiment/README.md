@@ -80,26 +80,26 @@ Then visit: `http://localhost:8501`
 - Sentiment score histogram
 - Sample comments by category
 
-🔮 Predictions
-- 365-day sentiment forecast
+ Predictions
+- 30-day sentiment forecast
 - Confidence intervals
 - Forecast statistics
 
 Technologies
 
-- **Python 3.10+**
-- **Streamlit** - Interactive dashboard
-- **Plotly** - Visualizations
-- **NLTK/VADER** - Sentiment analysis
-- **Statsmodels** - ARIMA forecasting
-- **Pandas** - Data processing
-- **Google API** - YouTube data
+- Python 3.10+
+- Streamlit - Interactive dashboard
+- Plotly - Visualizations
+- NLTK/VADER - Sentiment analysis
+- Statsmodels - ARIMA forecasting
+- Pandas - Data processing
+- Google API - YouTube data
 
  Author
 
 Your Name - [GitHub Profile](https://github.com/YOUR_USERNAME)
 
-## License
+License
 
 MIT License - feel free to use this project
 
