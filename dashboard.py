@@ -17,14 +17,22 @@ st.markdown("YouTube comments sentiment analysis with ML predictions")
 
 # Load data
 
+import os
+
+# Load data with caching
+@st.cache_data
+def load_youtube_data():
+    path = os.path.join('data', 'processed', 'youtube_comments_sentiment.csv')
+    return pd.read_csv(path)
 
 @st.cache_data
-def load_data():
-    df = pd.read_csv('data/processed/youtube_comments_sentiment.csv')
-    return df
+def load_forecast_data():
+    path = os.path.join('data', 'predictions', 'sentiment_forecast.csv')
+    return pd.read_csv(path)
 
-df = load_data()
-
+# Use the functions
+df_youtube = load_youtube_data()
+df_forecast = load_forecast_data()
 try:
     comments_df, forecast_df = load_data()
 except Exception as e:
