@@ -1,12 +1,12 @@
 **Paracetamol Sentiment Analysis**
 
-A machine learning project that analyzes YouTube comments about paracetamol and predicts sentiment trends for the next year.
+A machine learning project that analyzes YouTube comments about paracetamol and predicts sentiment trends for the next 30 days.
 
  Features
 
 -  Scrapes 1000+ YouTube videos for paracetamol comments
 -  Analyzes sentiment (positive/negative/neutral) using VADER
--  Predicts sentiment for next 365 days using ARIMA
+-  Predicts sentiment for next 30 days using ARIMA
 -  Interactive Streamlit dashboard with visualizations
 
  Project Structure
@@ -58,8 +58,8 @@ Then visit: `http://localhost:8501`
 
 1. **Scrape**: `scrapper.py` - Fetch comments from YouTube
 2. **Analyze**: `sentiment_analyzer.py` - Score sentiment (VADER)
-3. **Predict**: `predict_sentiment.py` - Forecast next year (ARIMA)
-4. **Visualize**: `dashboard.py` - Interactive Streamlit dashboard
+3. **Predict**: `predict_sentiment.py` - Forecast next 30 days (ARIMA)
+4. **Visualize**: `dashboard.py` - Interactive Streamlit dashboard - [Streamlit](https://dashboard-paracetamol-sentiment-prediction.streamlit.app/#paracetamol-sentiment-analysis-dashboard)
 
  Results
 
@@ -68,7 +68,7 @@ Then visit: `http://localhost:8501`
   - Positive: 192 (15%)
   - Negative: 176 (14%)
   - Neutral: 906 (71%)
-- **Average Sentiment Score**: 0.XX
+- **Average Sentiment Score**: 0.14
 
  Dashboard Pages
 
