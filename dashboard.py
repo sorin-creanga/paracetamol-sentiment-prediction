@@ -16,11 +16,14 @@ st.title("💊 Paracetamol Sentiment Analysis Dashboard")
 st.markdown("YouTube comments sentiment analysis with ML predictions")
 
 # Load data
+
+
 @st.cache_data
 def load_data():
-    comments_df = pd.read_csv(r"C:\Users\sorin.creanga\Desktop\Paracetamol_sentiment_predictor\paracetamol-sentiment\data\processed\youtube_comments_sentiment.csv")
-    forecast_df = pd.read_csv(r"C:\Users\sorin.creanga\Desktop\Paracetamol_sentiment_predictor\paracetamol-sentiment\data\predictions\sentiment_forecast.csv")
-    return comments_df, forecast_df
+    df = pd.read_csv('data/processed/youtube_comments_sentiment.csv')
+    return df
+
+df = load_data()
 
 try:
     comments_df, forecast_df = load_data()
