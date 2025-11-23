@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 from datetime import datetime
+import os
 
 # Set page config
 st.set_page_config(
@@ -15,30 +16,52 @@ st.set_page_config(
 st.title("💊 Paracetamol Sentiment Analysis Dashboard")
 st.markdown("YouTube comments sentiment analysis with ML predictions")
 
-# Load data
-
-import os
-
-# Load data with caching
-# Change this in dashboard.py if your files are in the root folder
-@st.cache_data
-def load_youtube_data():
-    # path = os.path.join('data', 'processed', 'youtube_comments_sentiment.csv')  <-- OLD
-    path = 'youtube_comments_sentiment.csv' # <-- NEW
-    return pd.read_csv(path)
+# --- DATA LOADING SECTION ---
 
 @st.cache_data
-def load_forecast_data():
-    # path = os.path.join('data', 'predictions', 'sentiment_forecast.csv') <-- OLD
-    path = 'sentiment_forecast.csv' # <-- NEW
-    return pd.read_csv(path)
+def load_data():
+    """
+    Loads data from CSV files. 
+    Tries to load from the root directory first. 
+    If not found, falls back to the 'data/' subdirectories.
+    """
+    # Define file names
+    comments_file = 'youtube_comments_sentiment.csv'
+    forecast_file = 'sentiment_forecast.csv'
+    
+    # 1. Try loading Comments Data
+    if os.path.exists(comments_file):
+        df_comments = pd.read_csv(comments_file)
+    else:
+        # Fallback to original structure if file not found in root
+        fallback_path = os.path.join('data', 'processed', comments_file)
+        if os.path.exists(fallback_path):
+            df_comments = pd.read_csv(fallback_path)
+        else:
+            raise FileNotFoundError(f"Could not find {comments_file} in root or data/processed/")
 
+    # 2. Try loading Forecast Data
+    if os.path.exists(forecast_file):
+        df_forecast = pd.read_csv(forecast_file)
+    else:
+        # Fallback to original structure if file not found in root
+        fallback_path = os.path.join('data', 'predictions', forecast_file)
+        if os.path.exists(fallback_path):
+            df_forecast = pd.read_csv(fallback_path)
+        else:
+            raise FileNotFoundError(f"Could not find {forecast_file} in root or data/predictions/")
+            
+    return df_comments, df_forecast
 
+# Load the data using the single wrapper function
 try:
     comments_df, forecast_df = load_data()
 except Exception as e:
     st.error(f"Error loading data: {e}")
+    st.info("Please ensure 'youtube_comments_sentiment.csv' and 'sentiment_forecast.csv' are uploaded to your GitHub repository.")
     st.stop()
+
+# --- DASHBOARD INTERFACE ---
 
 # Sidebar
 st.sidebar.title("📊 Navigation")
