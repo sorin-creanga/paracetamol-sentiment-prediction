@@ -97,7 +97,7 @@ Technologies
 
  Author
 
- [GitHub Profile](https://github.com/sorin-creanga)
+ [@Sorin Creanga](https://github.com/sorin-creanga)
 
 License
 
