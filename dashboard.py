@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 # Title
-st.title("💊 Paracetamol Sentiment Analysis Dashboard")
+st.title("Paracetamol Sentiment Analysis Dashboard")
 st.markdown("YouTube comments sentiment analysis with ML predictions")
 
 # --- DATA LOADING SECTION ---
@@ -133,26 +133,26 @@ elif page == "Analysis":
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.write("**Positive Comments** 😊")
+        st.write("**Positive Comments**")
         positive_samples = comments_df[comments_df['sentiment_category'] == 'positive']['text'].head(3)
         for i, comment in enumerate(positive_samples, 1):
             st.write(f"{i}. {comment[:100]}...")
     
     with col2:
-        st.write("**Neutral Comments** 😐")
+        st.write("**Neutral Comments**")
         neutral_samples = comments_df[comments_df['sentiment_category'] == 'neutral']['text'].head(3)
         for i, comment in enumerate(neutral_samples, 1):
             st.write(f"{i}. {comment[:100]}...")
     
     with col3:
-        st.write("**Negative Comments** 😞")
+        st.write("**Negative Comments**")
         negative_samples = comments_df[comments_df['sentiment_category'] == 'negative']['text'].head(3)
         for i, comment in enumerate(negative_samples, 1):
             st.write(f"{i}. {comment[:100]}...")
 
 # PAGE 3: PREDICTIONS
 elif page == "Predictions":
-    st.header("🔮 Sentiment Predictions (Next 365 Days)")
+    st.header("Sentiment Predictions (Next 365 Days)")
     
     # Parse forecast data
     forecast_df.index = pd.date_range(start=datetime.now(), periods=len(forecast_df), freq='D')
