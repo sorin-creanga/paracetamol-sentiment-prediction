@@ -20,19 +20,20 @@ st.markdown("YouTube comments sentiment analysis with ML predictions")
 import os
 
 # Load data with caching
+# Change this in dashboard.py if your files are in the root folder
 @st.cache_data
 def load_youtube_data():
-    path = os.path.join('data', 'processed', 'youtube_comments_sentiment.csv')
+    # path = os.path.join('data', 'processed', 'youtube_comments_sentiment.csv')  <-- OLD
+    path = 'youtube_comments_sentiment.csv' # <-- NEW
     return pd.read_csv(path)
 
 @st.cache_data
 def load_forecast_data():
-    path = os.path.join('data', 'predictions', 'sentiment_forecast.csv')
+    # path = os.path.join('data', 'predictions', 'sentiment_forecast.csv') <-- OLD
+    path = 'sentiment_forecast.csv' # <-- NEW
     return pd.read_csv(path)
 
-# Use the functions
-df_youtube = load_youtube_data()
-df_forecast = load_forecast_data()
+
 try:
     comments_df, forecast_df = load_data()
 except Exception as e:
