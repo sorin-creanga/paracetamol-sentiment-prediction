@@ -16,24 +16,22 @@ st.set_page_config(
 st.title("Paracetamol Sentiment Analysis Dashboard")
 st.markdown("YouTube comments sentiment analysis with ML predictions")
 
-# --- DATA LOADING SECTION ---
+# LOADING DATA
 
 @st.cache_data
 def load_data():
-    """
-    Loads data from CSV files. 
-    Tries to load from the root directory first. 
-    If not found, falls back to the 'data/' subdirectories.
-    """
-    # Define file names
+    
+    #Loads data from CSV files. 
+    
+    
     comments_file = 'youtube_comments_sentiment.csv'
     forecast_file = 'sentiment_forecast.csv'
     
-    # 1. Try loading Comments Data
+    # loading comments data
     if os.path.exists(comments_file):
         df_comments = pd.read_csv(comments_file)
     else:
-        # Fallback to original structure if file not found in root
+        #
         fallback_path = os.path.join('data', 'processed', comments_file)
         if os.path.exists(fallback_path):
             df_comments = pd.read_csv(fallback_path)
