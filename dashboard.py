@@ -5,7 +5,7 @@ import plotly.express as px
 from datetime import datetime
 import os
 
-# Set page config
+
 st.set_page_config(
     page_title="Paracetamol Sentiment Analysis",
     page_icon="💊",
@@ -61,7 +61,7 @@ except Exception as e:
 
 # --- DASHBOARD INTERFACE ---
 
-# Sidebar
+
 st.sidebar.title("📊 Navigation")
 page = st.sidebar.radio("Select Page:", ["Overview", "Analysis", "Predictions"])
 
