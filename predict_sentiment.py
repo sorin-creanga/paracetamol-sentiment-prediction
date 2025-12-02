@@ -5,13 +5,13 @@ import os
 
 print("Loading sentiment data...\n")
 
-# Load the sentiment analyzed data
+# Load data
 df = pd.read_csv(r"C:\Users\sorin.creanga\Desktop\Paracetamol_sentiment_predictor\paracetamol-sentiment\data\processed\youtube_comments_sentiment.csv")
 
-# Convert timestamp to datetime
+
 df['published_at'] = pd.to_datetime(df['published_at'])
 
-# Group by date and get daily average sentiment
+
 daily_sentiment = df.groupby(df['published_at'].dt.date)['sentiment_score'].mean()
 daily_sentiment.index = pd.to_datetime(daily_sentiment.index)
 
@@ -37,7 +37,7 @@ try:
     # Create folder
     os.makedirs("data/predictions", exist_ok=True)
     
-    # Save forecast
+   
     output_file = r"C:\Users\sorin.creanga\Desktop\Paracetamol_sentiment_predictor\paracetamol-sentiment\data\predictions\sentiment_forecast.csv"
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     forecast_df.to_csv(output_file)
@@ -60,7 +60,7 @@ except Exception as e:
     print(f"Error: {e}")
     print("\nTrying simpler model...")
     
-    # If ARIMA fails, use simpler approach
+   
     model = ARIMA(daily_sentiment, order=(1, 0, 0))
     fitted_model = model.fit()
     forecast = fitted_model.get_forecast(steps=365)
