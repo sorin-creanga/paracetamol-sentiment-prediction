@@ -12,7 +12,7 @@ except LookupError:
 
 print("Loading comments...\n")
 
-# Load the CSV directly (no translation needed!)
+# Load the CSV 
 df = pd.read_csv(r"C:\Users\sorin.creanga\Desktop\Paracetamol_sentiment_predictor\paracetamol-sentiment\youtube_comments.csv")
 
 print(f"Analyzing sentiment for {len(df)} comments...\n")
